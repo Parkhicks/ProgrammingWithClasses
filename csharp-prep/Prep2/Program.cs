@@ -5,49 +5,44 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep2 World!");
-        Console.WriteLine("What is your grade percentage?");
-        string userInput = Console.ReadLine();
-        int gradepercent = int.Parse(UserInput);
-        if (gradepercent >= 90)
+    
+        Console.WriteLine("What is your grade percent? ");
+        string gradeinput = Console.ReadLine();
+        int percentage = int.Parse(gradeinput);
+        string letter = "";
+        if (percentage >= 90)
         {
             Console.WriteLine("You got an A");
-            string result =("pass");
+            letter = "A";
         }
-        else if (gradepercent >= 80)
+        else if (percentage >= 80)
         {
             Console.WriteLine("You got a B");
-            string result =("pass");
+            letter = "B";
         }
-        else if (gradepercent >= 70)
+        else if (percentage >=70)
         {
             Console.WriteLine("You got a C");
-            string result =("pass");
+            letter = "C";
         }
-        else if (gradepercent >= 60)
+        else if (percentage >=60)
         {
             Console.WriteLine("You got a D");
-            string result =("fail");
+            letter = "D";
         }
         else
         {
             Console.WriteLine("You got an F");
-            string result =("fail");
-        };
-
-        if (result == "pass")
-        {
-            Console.WriteLine("Congratulations, you passed!");
-        }
-        else if (result == "fail")
-        {
-            Console.WriteLine("Uh Oh, looks like you didn't pass this time, but keep going, you got this!");
-        }
-        else 
-        {
-            Console.WriteLine("Error");
+            letter = "F";
         }
 
-
+        if (letter=="A"||letter =="B"|| letter =="C")
+        {
+            Console.WriteLine("Congratulations you passed ");
+        }
+        else if (letter =="C"|| letter =="D" || letter =="F")
+        {
+            Console.WriteLine("Unfortunately you didn't pass this time, keep trying!");
+        }
     }
 }
