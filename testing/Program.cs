@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 Console.WriteLine("What is your grade percent? ");
+
+Console.WriteLine("This is the new stuff from my test branch 01");
 string gradeinput = Console.ReadLine();
 int percentage = int.Parse(gradeinput);
 string letter = "";
