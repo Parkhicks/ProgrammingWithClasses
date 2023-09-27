@@ -37,4 +37,8 @@ public class Team
         Console.WriteLine();
 
     }
+    public string GetTeamName()
+    {
+        return _name;
+    }
 }
