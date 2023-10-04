@@ -1,11 +1,14 @@
-public class entry
-{
-    public entry()
-    {
-        Console.WriteLine(prompt.random());
-        
+// using Microsoft.VisualBasic;
 
-    }
+// public class entry()
+// {
+    
+//     var date = DateAndTime.Now;
+//     string _date = 
+//     string _prompt =
+    
+//     public entry()
+//     {
+//     }
 
-    }
-}
+// }
