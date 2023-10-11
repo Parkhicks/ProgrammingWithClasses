@@ -10,7 +10,7 @@ public class prompt
         prompts.Add("If today was your last day, what would you regret not doing?");
         prompts.Add("When did you feel the most of any emotion? What made you feel that way?");
     }
-    public string random()
+    public int random()
     {
         
     }
