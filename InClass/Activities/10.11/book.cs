@@ -13,9 +13,9 @@ public class Book
         _available = true;
     }
 
-    public void hasauthor()
+    public void hasauthor(string author)
     {
-
+        return _author.Contains(author);
     }
     public void Display()
     {
@@ -23,18 +23,19 @@ public class Book
     }
     public void IsAvailable()
     {
-
+        
     }
     public void TimesRead()
     {
-
+        return _timesread;
     }
     public void CheckOut()
     {
-
+        _timesread += 1;
+        _available = false;
     }
     public void CheckIn()
     {
-
+        _available = true;
     }
 }
