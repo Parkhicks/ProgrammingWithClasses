@@ -10,7 +10,10 @@ public class entry
     {
         Console.WriteLine($"Date{_date}\nPrompt{_prompt}\nResponse:{_response}");
     }
-
+    public void create_entry(string _date, string _prompt)
+    {
+        
+    }
 //     var date = DateAndTime.Now;
 //     string _date = 
 //     string _prompt =

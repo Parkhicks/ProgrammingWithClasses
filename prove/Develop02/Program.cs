@@ -24,9 +24,7 @@ while (responseint != 5)
         int prompt_num = int.Parse(prompt_choice);
         if (prompt_num == 7)
         {
-            string rand_prompt = prompts.get_prompt;
-            entry1._prompt = rand_prompt;
-            Console.WriteLine($"\n---------------------------\n \n{rand_prompt}\n>");
+            Console.WriteLine($"\n---------------------------\n \n{prompts.get_prompt}\n>");
             entry1._response = Console.ReadLine();
             entry1._date = dateText;
         }
