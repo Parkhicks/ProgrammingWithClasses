@@ -1,5 +1,7 @@
 prompt prompts = new prompt();
 entry entry1 = new entry();
+journal my_journal = new journal();
+
 int responseint = 0;
 string entry_response = "";
 string dateText = DateTime.Now.ToShortDateString();
@@ -34,10 +36,12 @@ while (responseint != 5)
             entry1._response = Console.ReadLine();
             entry1._date = dateText;
         }
+        my_journal.add_entry(entry1._prompt, entry1._date,entry1._response);
     }
     else if (responseint ==2)
     {
         Console.WriteLine("You chose option 2");
+        my_journal.iterate_entries();
     }
     else if (responseint ==3)
     {
