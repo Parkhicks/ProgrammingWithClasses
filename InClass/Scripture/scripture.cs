@@ -1,19 +1,12 @@
 public class Scripture
 {
-   
-    //private List<>
-    //private List<string> scripture_list()
-    private string _scripture;
 
     private List<Word> _words = new List<Word>();
     private List<Word> _tempwords = new List<Word>();
-    //private List<Word> _scripture = new List<Word>();
+
 
     public Scripture()
     {
-        //_scripture = "Daryl stop hitting the Griddy in front of the Walkers.";
-        
-        //string[] _word_list = _scripture.Split(" ");
        
     }
 

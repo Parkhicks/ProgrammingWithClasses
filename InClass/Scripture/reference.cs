@@ -10,7 +10,7 @@ public class Reference
         _verse = verse;
 
     }
-    public void DisplayRef{
-        Console.WriteLine("${_book} {_chapter}:{_verse}");
+    public void DisplayRef(){
+        Console.WriteLine($"{_book} {_chapter}:{_verse}");
     }
 }

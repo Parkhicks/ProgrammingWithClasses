@@ -79,19 +79,4 @@ public class Word
         //word will be blank, BUT bases itself off of the previously used list
     }
 
-    //private List<Word> _word_list = new List<Word>();
-
-//LOOK HERE FOR THE FOREACH
-    //string[] _word_list = scripture_1.Split(" ");
-
-    //string phrase = "The quick brown fox jumps over the lazy dog.";
-//string[] words = phrase.Split(' ');
-
-//foreach (var word in words)
-
-    //System.Console.WriteLine($"<{word}>");
-
-
-
-
 }
