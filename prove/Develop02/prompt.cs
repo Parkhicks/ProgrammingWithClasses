@@ -2,7 +2,6 @@ using System.ComponentModel.DataAnnotations;
 
 public class prompt
 {   public List <string> prompts = new List<string>();
-    
      
     public prompt()
     {
@@ -16,9 +15,9 @@ public class prompt
     public string get_prompt()
     {
         var random_number = new Random();
-        var _number = random_number.Next(0, prompts.Count);
-        Console.WriteLine($"{prompts[_number]}");
-        return (prompts[_number]);
+        var _number = random_number.Next(0, prompts.Count());
+        string prompt = prompts[random_number.Next(0,prompts.Count())];
+        return prompt;
 
     }
 }
