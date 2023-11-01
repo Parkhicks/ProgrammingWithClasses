@@ -43,16 +43,17 @@ while (responseint != 5)
     }
     else if (responseint ==2)
     {
-        Console.WriteLine("You chose option 2\n");
+        Console.WriteLine("Here's your current entries:\n");
         my_journal.iterate_entries();
     }
     else if (responseint ==3)
     {
-        Console.WriteLine("You chose option 3");
+        Console.WriteLine("You chose option 3 Load");
     }
     else if (responseint ==4)
     {
-        Console.WriteLine("You chose option 4");
+        Console.WriteLine("You chose option 4 Save");
+        
     }
     else
     {
