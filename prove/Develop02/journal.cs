@@ -2,16 +2,16 @@ public class journal
 {
     public List <string> entries = new List<string>();
 
-    public void add_entry(string _prompt, string _date, string _response)
+    public void add_entry(string _entry)
     {
-        entries.Add()
+        entries.Add(_entry);
     }
 
     public void iterate_entries()
     {
-        foreach (string entry in entries)
+        foreach (string item in entries)
         {
-
+            Console.WriteLine(item);
         }
     }
 
