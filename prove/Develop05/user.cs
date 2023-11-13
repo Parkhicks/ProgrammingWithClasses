@@ -1,7 +1,7 @@
 public class User
 {
     private int score = 0;
-    list
+
 
 
     public User()
