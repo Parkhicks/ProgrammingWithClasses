@@ -10,7 +10,10 @@ public class Controller
 
             if (input == "1")
             {
-
+                List<Eternal> Eternal_list = new List<Eternal>();
+                List<Goal> Simple_list = new List<Goal>();
+                List<Checklist> Checklist_list = new List<Checklist>();
+                
             }
             else if (input == "2")
             {
@@ -23,7 +26,7 @@ public class Controller
                     Console.WriteLine("How many points do you want to get from this goal?\n");
                     int points = int.Parse(Console.ReadLine());
                     Goal goal = new Goal();
-                    goal.create_goal("S",points,nameof);
+                    goal.create_goal("S",points,nameof,0,0);
                 }
                 else if (input2 == "2")
                 {
@@ -32,7 +35,7 @@ public class Controller
                     Console.WriteLine("How many points do you want every time you do this?\n");
                     int points = int.Parse(Console.ReadLine());
                     Eternal eternal = new Eternal();
-                    eternal.create_goal("E",points,nameof);
+                    eternal.create_goal("E",points,nameof,0,0);
                 }
                 else if (input2 == "3")
                 {
@@ -45,7 +48,7 @@ public class Controller
                     Console.WriteLine($"How many points do you want when you complete this goal {requirement} times?\n");
                     int reward = int.Parse(Console.ReadLine());
                     Checklist checklist = new Checklist();
-                    checklist.create_goal("C",)
+                    checklist.create_goal("C",points,nameof,requirement,reward);
                 }
                 else
                 {Console.WriteLine("Invalid input! Please try again.");}

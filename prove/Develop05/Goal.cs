@@ -4,17 +4,20 @@ public class Goal
     protected string g_name = "";
     protected bool g_status = false;
     protected string g_type = "S";
+    protected int g_reward;
+    protected int g_required_time;
 
 
     public Goal() 
     {
     }
-    public virtual void create_goal(string type, int points, string name)
+    public virtual void create_goal(string type, int points, string name, int required_times, int reward)
     {
         
         g_points = points;
         g_name = name;
         g_type = type;
+
     }
 
     public virtual void Complete_goal(User user)

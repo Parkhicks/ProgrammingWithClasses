@@ -8,13 +8,7 @@ public class Checklist : Goal
 
     }
 
-    public override void create_goal(string type, int points, int reward,int requirement, string name) : base( type,  points,  name)
-    {
-        g_name = name;
-        g_points = points;
-        _RequiredCount = requirement;
-        _Reward = reward;
-    }
+ 
     public override void Complete_goal(User user)
     {
         if (count == _RequiredCount)
