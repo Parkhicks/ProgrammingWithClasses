@@ -1,28 +1,29 @@
-public class Goal
+public abstract class Goal
 {
-    protected int g_points = 0;
-    protected string g_name = "";
-    protected bool g_status = false;
-    protected string g_type = "S";
-    protected int g_reward;
-    protected int g_required_time;
+    protected int g_points;
+    protected string g_name;
+    protected bool g_status;
+    protected string g_type;
 
-
-    public Goal() 
-    {
-    }
-    public virtual void create_goal(string type, int points, string name, int required_times, int reward)
-    {
-        
-        g_points = points;
-        g_name = name;
-        g_type = type;
-
-    }
 
     public virtual void Complete_goal(User user)
     {
         g_status = true;
         user.gain_points(g_points);
     }
+    public string Get_type()
+    {
+        return g_type;
+    }
+    public string Get_Status()
+    {
+        if (g_status == false){
+            return "[]";
+        }
+        else {
+            return "[x]";
+        }
+    }
+
+    
 }
