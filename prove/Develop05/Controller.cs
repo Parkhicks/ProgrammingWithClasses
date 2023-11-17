@@ -1,15 +1,20 @@
+using System.Runtime.CompilerServices;
+
 public class Controller
 {
     public void ShowControls()
     {
+        List<Eternal> Eternal_list = new List<Eternal>();
+        List<Simple> Simple_list = new List<Simple>();
+        List<Checklist> Checklist_list = new List<Checklist>();
+        User user = new User();
+        string filename = "goals.txt";
         while (true)
         {
-            Console.WriteLine("What would you like to do? ");
-            Console.WriteLine("1. View Goals 1 \n2. Create Goals 1\n3. Complete a goals\n4. Save Goals\n5. Load Goals\n6. Exit");
+            Console.WriteLine("\nWhat would you like to do?");
+            Console.WriteLine("1. View Goals\n2. Create Goals\n3. Complete a goals\n4. Save Goals\n5. Load Goals\n6. Exit\n");
             string input = Console.ReadLine();
-            List<Eternal> Eternal_list = new List<Eternal>();
-            List<Simple> Simple_list = new List<Simple>();
-            List<Checklist> Checklist_list = new List<Checklist>();
+            
 
             if (input == "1")
             {
@@ -18,21 +23,21 @@ public class Controller
                 Console.WriteLine("Simple Goals:");
                 foreach(Simple item in Simple_list)
                 {
-                    Console.WriteLine($"Goal {count}: {item.g_name} {item.Get_Status()}");
+                    Console.WriteLine($"Goal {count}: {item.Get_Name()} {item.Get_Status()}");
                     count += 1;
                 }
                 Console.WriteLine("\n\nEternal Goals: ");
                 count = 1;
                 foreach(Eternal item in Eternal_list)
                 {
-                    Console.WriteLine($"Goal {count}: {item.g_name} {item.Get_Status()}");
+                    Console.WriteLine($"Goal {count}: {item.Get_Name()} {item.Get_Status()}");
                     count += 1;
                 }
                 Console.WriteLine("\n\nChecklist Goals: ");
                 count = 1;
                 foreach(Checklist item in Checklist_list)
                 {
-                    Console.WriteLine($"Goal {count}: {item.g_name} {item.GetChecklistTime} {item.Get_Status()}");
+                    Console.WriteLine($"Goal {count}: {item.Get_Name()} {item.GetChecklistTime} {item.Get_Status()}");
                     count += 1;
                 }
             }
@@ -84,7 +89,7 @@ public class Controller
                     int count = 1;
                         foreach(Simple item in Simple_list)
                     {
-                        Console.WriteLine($"Goal {count}: {item.g_name}");
+                        Console.WriteLine($"Goal {count}: {item.Get_Name()}");
                         count += 1;
                     }
                     choice = int.Parse(Console.ReadLine());
@@ -96,7 +101,7 @@ public class Controller
                     int count = 1;
                         foreach(Eternal item in Eternal_list)
                     {
-                        Console.WriteLine($"Goal {count}: {item.g_name}");
+                        Console.WriteLine($"Goal {count}: {item.Get_Name()}");
                         count += 1;
                     }
                     choice = int.Parse(Console.ReadLine());
@@ -108,7 +113,7 @@ public class Controller
                     int count = 1;
                         foreach(Checklist item in Checklist_list)
                     {
-                        Console.WriteLine($"Goal {count}: {item.g_name}");
+                        Console.WriteLine($"Goal {count}: {item.Get_Name()}");
                         count += 1;
                     }
                     choice = int.Parse(Console.ReadLine());
@@ -121,7 +126,12 @@ public class Controller
             }
             else if (input == "4")
             {
-                break;
+                Console.WriteLine("Your file name will be: goals.txt");
+                foreach (Simple goal in Simple_list)
+                {
+                    goal.Save(writer);
+                }
+
             }
             else if (input == "5")
             {
@@ -129,7 +139,8 @@ public class Controller
             }
             else if (input == "6")
             {
-                
+                Console.WriteLine("Thank you, have a good day!");
+                break;
             }
             else
             {

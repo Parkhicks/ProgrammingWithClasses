@@ -16,7 +16,15 @@ public class Checklist : Goal
     public string GetChecklistTime(){
         return $"{count}/{g_required_time}";
     }
-
+    public int GetReward(){
+        return g_reward;
+    }
+    public int GetCount(){
+        return count;
+    }
+    public int GetRequiredTime(){
+        return g_required_time;
+    }
  
     public override void Complete_goal(User user)
     {
