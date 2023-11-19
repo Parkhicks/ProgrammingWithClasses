@@ -18,7 +18,7 @@ public abstract class Goal
     public int GetPoints(){
         return g_points;
     }
-    public string Get_Status()
+    public string Display_Status()
     {
         if (g_status == false){
             return "[ ]";
@@ -27,32 +27,19 @@ public abstract class Goal
             return "[x]";
         }
     }
+    public bool Get_Status()
+    {
+        return g_status;
+    }
     public string Get_Name()
     {
         return g_name;
     }
-   
-   
-    public void Save(StreamWriter writer)
+    public void set_status(bool status)
     {
-        writer.WriteLine($"{g_type},{g_name},{g_points}, {g_status}");
-        writer.Close();
+        g_status = status;
     }
-    //public void Load(string filename)
-    //{
-    //    _entries.Clear();
-    //    StreamReader reader = new StreamReader(filename);
-    //    while (!reader.EndOfStream)
-    //    {
-//            string prompt = reader.ReadLine();
-//            string response = reader.ReadLine();
-   //         string date = reader.ReadLine();
-  //          var timestamp = DateTime.Parse(date);
-//
-  //          Text text = new Text();
-  //          text._prompt = prompt;
-  //          text._content = response;
-  //          text._timestamp = timestamp;
-   //         _entries.Add(text);
+   
+
     
 }

@@ -8,12 +8,13 @@ public class Controller
         List<Simple> Simple_list = new List<Simple>();
         List<Checklist> Checklist_list = new List<Checklist>();
         User user = new User();
-        string filename = "goals.txt";
         while (true)
         {
+            Console.WriteLine($"Your current score is {user.get_score()}");
             Console.WriteLine("\nWhat would you like to do?");
             Console.WriteLine("1. View Goals\n2. Create Goals\n3. Complete a goals\n4. Save Goals\n5. Load Goals\n6. Exit\n");
             string input = Console.ReadLine();
+            Console.WriteLine("");
             
 
             if (input == "1")
@@ -23,23 +24,25 @@ public class Controller
                 Console.WriteLine("Simple Goals:");
                 foreach(Simple item in Simple_list)
                 {
-                    Console.WriteLine($"Goal {count}: {item.Get_Name()} {item.Get_Status()}");
+                    Console.WriteLine($"Goal {count}: {item.Get_Name()} {item.Display_Status()}");
                     count += 1;
                 }
                 Console.WriteLine("\n\nEternal Goals: ");
                 count = 1;
                 foreach(Eternal item in Eternal_list)
                 {
-                    Console.WriteLine($"Goal {count}: {item.Get_Name()} {item.Get_Status()}");
+                    Console.WriteLine($"Goal {count}: {item.Get_Name()} {item.Display_Status()}");
                     count += 1;
                 }
                 Console.WriteLine("\n\nChecklist Goals: ");
                 count = 1;
                 foreach(Checklist item in Checklist_list)
                 {
-                    Console.WriteLine($"Goal {count}: {item.Get_Name()} {item.GetChecklistTime} {item.Get_Status()}");
+                    Console.WriteLine($"Goal {count}: {item.Get_Name()} {item.GetChecklistTime()} {item.Display_Status()}");
                     count += 1;
                 }
+                Console.WriteLine("\n");
+                Thread.Sleep(5000);
             }
             else if (input == "2")
             {
@@ -127,15 +130,15 @@ public class Controller
             else if (input == "4")
             {
                 Console.WriteLine("Your file name will be: goals.txt");
-                foreach (Simple goal in Simple_list)
-                {
-                    goal.Save(writer);
-                }
+                user.Save(Simple_list,Eternal_list,Checklist_list);
+                Console.WriteLine("Your file has been saved");
+
 
             }
             else if (input == "5")
             {
-
+                user.Load(Simple_list,Eternal_list,Checklist_list);
+                Console.WriteLine("Your file has been loaded");
             }
             else if (input == "6")
             {

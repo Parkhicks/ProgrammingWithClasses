@@ -2,7 +2,7 @@ public class Checklist : Goal
 {
     int g_reward;
     int g_required_time;
-    int count;
+    int count = 0;
     public Checklist(string type, int points, string name, int reward, int required_times)
     {
         g_status = false;
@@ -25,6 +25,11 @@ public class Checklist : Goal
     public int GetRequiredTime(){
         return g_required_time;
     }
+    public void set_count(int r_count)
+    {
+        count = r_count;
+    }
+
  
     public override void Complete_goal(User user)
     {

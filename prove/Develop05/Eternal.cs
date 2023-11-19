@@ -21,4 +21,8 @@ public class Eternal : Goal
     public int GetScore(){
         return high;
     }
+    public void SetHigh(int High)
+    {
+        high = High;
+    }
 }
