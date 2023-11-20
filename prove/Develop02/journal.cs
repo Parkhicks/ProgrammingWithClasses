@@ -1,17 +1,18 @@
-public class journal
+public class Journal
 {
-    public List <string> entries = new List<string>();
+    public List <Entry> entries = new List<Entry>();
 
-    public void add_entry(string _entry)
+    public void add_entry(Entry _entry)
     {
         entries.Add(_entry);
     }
-
     public void iterate_entries()
     {
-        foreach (string item in entries)
+        foreach (Entry item in entries)
         {
-            Console.WriteLine(item);
+            Console.WriteLine(item._date);
+            Console.WriteLine(item._prompt);
+            Console.WriteLine(item._response);
         }
     }
 
