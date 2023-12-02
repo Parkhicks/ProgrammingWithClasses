@@ -1,9 +1,9 @@
-using System;
-
-class Program
+﻿class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Console.WriteLine("Hello FinalProject World!");
+        UserManager userManager = new UserManager();
+        PasswordManagerApp instance = new PasswordManagerApp(userManager);
+        instance.Run();
     }
 }
