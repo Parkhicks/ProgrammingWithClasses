@@ -1,0 +1,4 @@
+0
+S,get a girlfriend,1000,False
+E,read the BOM,100,False,0
+C,Go on 10 dates,100,False,500,0,10

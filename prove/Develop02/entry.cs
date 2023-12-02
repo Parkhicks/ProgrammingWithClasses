@@ -1,13 +1,15 @@
 // using Microsoft.VisualBasic;
 
-public class entry
+public class Entry
 {
     public string _prompt = "";
     public string _response = "";
     public string _date = "";
 
-    public string create_entry(string date, string prompt, string response)
+    public Entry(string date, string prompt, string response)
     {
-        return ($"Date: {_date}\nPrompt: {_prompt}\nResponse: {_response}\n\n");
+        _prompt = prompt;
+        _response = response;
+        _date = date;
     }
 }
