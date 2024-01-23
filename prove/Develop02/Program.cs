@@ -1,10 +1,12 @@
 prompt prompts = new prompt();
 
-journal my_journal = new journal();
+Journal my_journal = new Journal();
 
 int responseint = 0;
-string entry_response = "";
+string entry_response;
 string dateText = DateTime.Now.ToShortDateString();
+string _prompt;
+string filename = "journal.txt";
 
 while (responseint != 5)
 {
@@ -14,7 +16,6 @@ while (responseint != 5)
     responseint = int.Parse(response); 
     if (responseint == 1)
     {
-        entry entry1 = new entry();
         Console.Write("\nChoose from the following options:\n--------------------\n");
         int count = 0;
         foreach(string singleentry in prompts.prompts)
@@ -27,32 +28,50 @@ while (responseint != 5)
         int prompt_num = int.Parse(prompt_choice);
         if (prompt_num == 7)
         {
-            Console.Write($"\n---------------------------\n \n{prompts.get_prompt()}\n>");
+            _prompt = prompts.get_prompt();
+            Console.Write($"\n---------------------------\n \n{_prompt}\n>");
 
-            entry1._response = Console.ReadLine();
-            entry1._date = dateText;
+            entry_response = Console.ReadLine();
         }
         else{
-            entry1._prompt = prompts.prompts[prompt_num-1];
+            _prompt = prompts.prompts[prompt_num-1];
             Console.Write($"\n---------------------------\n \n{prompts.prompts[prompt_num-1]}\n>");
-            entry1._response = Console.ReadLine();
-            entry1._date = dateText;
+            entry_response = Console.ReadLine();
         }
-        my_journal.add_entry(entry1.create_entry(entry1._date, entry1._prompt,entry1._response));
+        Entry entry1 = new Entry(dateText,_prompt,entry_response);
+        my_journal.add_entry(entry1);
         Console.WriteLine();
     }
     else if (responseint ==2)
     {
-        Console.WriteLine("You chose option 2\n");
+        Console.WriteLine("Here's your current entries:\n");
         my_journal.iterate_entries();
+        Console.WriteLine("\n");
     }
     else if (responseint ==3)
     {
-        Console.WriteLine("You chose option 3");
+        Console.WriteLine("You chose option 3 Load");
+        string[] lines = System.IO.File.ReadAllLines(filename);
+        foreach (string r_line in lines)
+        {
+
+            string[] broke = r_line.Split(",");
+            Entry entry1 = new Entry(broke[0],broke[1],broke[2]);
+            my_journal.add_entry(entry1);
+        }
+        Console.WriteLine("Your file has been loaded");
     }
     else if (responseint ==4)
     {
-        Console.WriteLine("You chose option 4");
+        Console.WriteLine("You chose option 4 Save");
+        StreamWriter writer = new StreamWriter(filename);
+        foreach (Entry entry in my_journal.entries)
+        {
+            writer.WriteLine($"{entry._date},{entry._prompt},{entry._response}");
+            
+        }
+        writer.Close();
+        
     }
     else
     {
