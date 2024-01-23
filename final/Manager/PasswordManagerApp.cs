@@ -20,9 +20,8 @@ public class PasswordManagerApp : BaseApp
             Console.WriteLine("1. Add New Password");
             Console.WriteLine("2. Generate Random Password");
             Console.WriteLine("3. View All Passwords");
-            Console.WriteLine("4. Remove Password");
-            Console.WriteLine("5. Save Passwords");
-            Console.WriteLine("6. Exit");
+            Console.WriteLine("4. Save Passwords");
+            Console.WriteLine("5. Exit");
             Console.WriteLine("==============================");
             Console.Write("Choose an option: ");
 
@@ -43,16 +42,13 @@ public class PasswordManagerApp : BaseApp
                         ViewAllPasswords();
                         break;
                     case 4:
-                        RemovePassword();
-                        break;
-                    case 5:
                         handler.Save();
                         Console.WriteLine("Your passwords have been saved");
                         break;
-                    case 6:
+                    case 5:
                         currentUser = null;
                         return;
-                    case 7:
+                    case 6:
                         int opt;
                         Console.Clear();
                         Console.WriteLine("\n** Are you sure you want to proceed? **");
